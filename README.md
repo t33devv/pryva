@@ -1,6 +1,6 @@
-# Pryva - Secure Password Manager CLI
+# pryva - password manager CLI
 
-A secure, command-line password manager built with Python. Pryva stores your passwords locally in an encrypted SQLite database, protected by a master password.
+python cli program to store your passwords locally in an encrypted SQLite database, protected by a master password.
 
 ## Features
 
@@ -99,8 +99,8 @@ Finds services containing the specified keyword.
 
 ## Security Features
 
-- **Argon2 Password Hashing**: Your master password is hashed using Argon2, a memory-hard function resistant to GPU attacks
-- **AES-256 Encryption**: All sensitive data is encrypted using AES-256 in CBC mode
+- **Argon2 Password Hashing**: Master password is hashed using Argon2, a memory-hard function resistant to GPU attacks
+- **AES-256 Encryption**: Sensitive data is encrypted using AES-256 in CBC mode
 - **PBKDF2 Key Derivation**: Encryption keys are derived using PBKDF2 with 100,000 iterations
 - **Secure Random Salt**: Each vault uses a unique, cryptographically secure random salt
 - **Local Storage**: Your data never leaves your device
@@ -123,26 +123,11 @@ uv run pytest
 uv sync --extra clipboard
 ```
 
-### Project Structure
-```
-pryva/
-├── pryva/
-│   ├── __init__.py       # Package initialization
-│   ├── __main__.py       # CLI entry point
-│   ├── cli.py           # Command-line interface
-│   ├── crypto.py        # Encryption/decryption
-│   └── storage.py       # Database operations
-├── tests/
-│   ├── test_crypto.py   # Crypto tests
-│   └── test_storage.py  # Storage tests
-└── pyproject.toml       # Project configuration
-```
+## Security Notes
 
-## Security Considerations
-
-- **Master Password**: Choose a strong, unique master password. It cannot be recovered if lost.
-- **Backup**: Consider backing up your `~/.pryva/passwords.db` file securely.
-- **Environment**: Run Pryva in a secure environment and ensure your system is malware-free.
+- **Master Password**: Your master password can't be recovered
+- **Backup**: Consider backing up your `~/.pryva/passwords.db` file securely
+- **Environment**: Run Pryva in a secure environment
 
 ## Contributing
 
@@ -155,8 +140,10 @@ pryva/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License
 
 ## Disclaimer
 
 This software is provided as-is. While care has been taken to implement security best practices, use at your own risk. Always keep backups of important data.
+
+## Made with 💙 by Tommy
